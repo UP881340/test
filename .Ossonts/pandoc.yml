@@ -1,0 +1,13 @@
+#https://pandoc.org/MANUAL.html#default-files
+# --from=gfm --to=latex --variable=documentclass=report  --variable=geometry:a4paper
+# --variable=geometry:margin=2cm  --variable=linkcolor:blue --pdf-engine=xelatex  ${{ env.FILELIST }} --output=build/Portfolio.pdf
+from: gfm
+to: latex
+output-file: build/Portfolio3.pdf
+variables:
+  documentclass: report
+  geometry: a4paper,margin=2cm
+  linkcolor: blue
+
+
+pdf-engine: pdflatex

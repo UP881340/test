@@ -1,0 +1,24 @@
+name: ValidateMarkdown
+
+on:
+  schedule:
+  - cron:  '0 6,18 * * *'
+  workflow_dispatch:
+
+jobs:
+  markdown-link-check:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - uses: gaurav-nelson/github-action-markdown-link-check@1.0.8
+      with:
+        config-file: '.Ossonts/mlc.json'
+        #check-modified-files-only: 'yes'
+  markdownlint-cli:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: markdownlint-cli
+      uses: nosborn/github-action-markdown-cli@v1.1.1
+      with:
+        files: "*.md"

@@ -1,0 +1,37 @@
+name: PortfolioChecker
+
+on:
+  schedule:
+  - cron:  '0 3 * * *'
+  workflow_dispatch:
+
+jobs:
+  #markdown-link-check:
+  #  runs-on: [self-hosted, linux, x64]
+  #  steps:
+  #  - uses: actions/checkout@master
+  #  - uses: gaurav-nelson/github-action-markdown-link-check@v1
+  HintsTipsAndErrors:
+    #runs-on: ubuntu-latest
+    runs-on: [self-hosted, linux, x64]
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Portfolio3Marker
+      uses: actions/checkout@v2                            # 2
+      with:
+        repository: M30819-2020/M30819-Portfolio3-Marker
+        token: ${{ secrets.PAT_RO }}              # 4
+        path: .Ossonts/
+
+    - name: Portfolio Hints and Tips
+      uses: ./.Ossonts/
+
+    # - name: markdownlint-cli
+    #   run: markdownlint *.md
+
+    # - name: Files
+    #   run: pwd && ls -al
+
+    # - name: Portfolio3 Checker
+    #   run: .Ossonts/Portfolio3.sh
