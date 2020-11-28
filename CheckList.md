@@ -2,7 +2,7 @@
 <!-- WARNING This is GFM -->
 <!--==============  START:   Edit the Markdown below here  ==============  -->
 
-* [ ] P3.1
+* [ ] P3.1 - Done
 * [ ] P3.2
 * [ ] P3.3
 * [ ] P3.4
