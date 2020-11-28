@@ -1,0 +1,10 @@
+# This is a yaml file -- be careful when editing
+# Stick to the formatting
+# List the markdown files you want to build into a pdf
+# List them in ORDER
+# One file per line
+
+
+input-files:
+- Portfolio3.md
+- CheckList.md #You will NOT want to remove this file
